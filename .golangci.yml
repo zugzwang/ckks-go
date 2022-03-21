@@ -1,0 +1,30 @@
+linters:
+  enable-all: true
+  disable:
+    # Have good common sense before disabling more linters
+    - gochecknoglobals
+    - goerr113
+    - gofumpt
+    - gomnd  # Magic numbers, such as len(slice) < 2
+    - gosec
+    - wsl
+  fast: false
+
+output:
+  # colored-line-number|line-number|json|tab|checkstyle|code-climate, default is "colored-line-number"
+  format: tab
+
+issues:
+  exclude-use-default: false
+  # Maximum issues count per one linter. Set to 0 to disable. Default is 50.
+  max-issues-per-linter: 4
+  # Maximum count of issues with the same text. Set to 0 to disable. Default is 3.
+  max-same-issues: 4
+  # options for analysis running
+  exclude-rules:
+
+# all available settings of specific linters
+linters-settings:
+  gofmt:
+    # simplify code: gofmt with `-s` option, true by default
+    simplify: false
